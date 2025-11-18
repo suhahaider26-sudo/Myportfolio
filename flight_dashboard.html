@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Flight Dashboard — Portfolio</title>
+
+<style>
+:root{
+  --bg-grad: linear-gradient(135deg,#7c4dff 0%, #ff6fb5 100%);
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --text: #f7f7fb;
+  --muted: rgba(247,247,251,0.78);
+  --accent: #ffd3ef;
+  --radius: 14px;
+  --container: 1100px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins',system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  color:var(--text);
+  background: var(--bg-grad);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{max-width:var(--container);margin:0 auto;padding:2rem}
+
+/* header */
+.site-header{
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), transparent);
+  backdrop-filter: blur(6px);
+  position:sticky;top:0;z-index:10;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.5rem 0}
+.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem}
+
+/* hero content */
+.hero{padding-top:3rem;min-height:60vh}
+.hero h1{font-size:2rem;margin-bottom:0.8rem}
+.hero p{color:var(--muted);margin-bottom:0.6rem}
+
+/* footer */
+.site-footer{padding:1.2rem 0;color:var(--muted)}
+.footer-inner{display:flex;justify-content:center}
+
+/* fade slide animation */
+.fade-slide{opacity:0;transform:translateY(12px);animation:fadeSlide .6s forwards}
+.delay-1{animation-delay:.18s}
+@keyframes fadeSlide{to{opacity:1;transform:none}}
+
+/* responsive */
+@media (max-width:900px){
+  .container{padding:1.2rem}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+<nav class="nav container">
+<a class="logo" href="index.html">Portfolio</a>
+</nav>
+</header>
+
+<main class="hero container fade-slide">
+<h1>Welcome to the Flight Dashboard</h1>
+<p>This is a sample dashboard for flights.</p>
+<p>Content goes here...</p>
+</main>
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>©️ <span id="year"></span> Portfolio — All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

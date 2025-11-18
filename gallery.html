@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Gallery — Portfolio</title>
+
+<style>
+:root{
+  --bg-grad: linear-gradient(135deg,#7c4dff 0%, #ff6fb5 100%);
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --text: #f7f7fb;
+  --muted: rgba(247,247,251,0.78);
+  --accent: #ffd3ef;
+  --radius: 14px;
+  --container: 1100px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins',system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  color:var(--text);
+  background: var(--bg-grad);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{max-width:var(--container);margin:0 auto;padding:2rem}
+
+/* header */
+.site-header{
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), transparent);
+  backdrop-filter: blur(6px);
+  position:sticky;top:0;z-index:10;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.5rem 0}
+.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;gap:0.6rem;align-items:center}
+.btn-link{color:var(--text);text-decoration:none;padding:0.55rem 0.9rem;border-radius:10px;font-weight:600;opacity:0.95}
+.btn-link:hover{transform:translateY(-2px);transition:all .18s}
+.btn-link.active{background:rgba(255,255,255,0.06)}
+
+/* page content */
+.page-title{font-size:1.4rem;margin:0 0 .6rem}
+.muted{color:var(--muted);margin:0 0 1rem}
+.page-content{padding-top:1.6rem}
+
+/* gallery grid */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.gallery-item{overflow:hidden;border-radius:10px}
+.gallery-item img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .28s ease}
+.gallery-item:hover img{transform:scale(1.06)}
+
+/* footer */
+.site-footer{padding:1.2rem 0;color:var(--muted)}
+.footer-inner{display:flex;justify-content:center}
+
+/* fade slide animation */
+.fade-slide{opacity:0;transform:translateY(12px);animation:fadeSlide .6s forwards}
+.delay-1{animation-delay:.18s}
+@keyframes fadeSlide{to{opacity:1;transform:none}}
+
+/* responsive */
+@media (max-width:1100px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.gallery-grid{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+
+<header class="site-header">
+<nav class="nav container">
+<a class="logo" href="index.html">Portfolio</a>
+<div class="nav-links">
+  <a href="index.html" class="btn-link">Home</a>
+  <a href="projects.html" class="btn-link">Projects</a>
+  <a href="gallery.html" class="btn-link active ">Gallery</a>
+  <a href="about.html" class="btn-link">About</a>
+  <a href="blog.html" class="btn-link">Blog</a>
+  <a href="blog-details.html" class="btn-link">Blog Details</a>  
+  <a href="pricing.html" class="btn-link">Pricing</a>
+  <a href="faq.html" class="btn-link">FAQ</a>
+  <a href="contact.html" class="btn-link">Contact</a>
+  <a href="skills.html" class="btn-link">Skills</a>
+  <a href="services.html" class="btn-link">Services</a>
+  <a href="service-details.html" class="btn-link">Service Details</a>
+</div>
+</nav>
+</header>
+
+<main class="container page-content fade-slide">
+<h2 class="page-title">Gallery</h2>
+<p class="muted">Screenshots and visuals from projects and UI experiments.</p>
+
+<div class="gallery-grid">
+  <div class="gallery-item">
+    <img src="flight_dashboard.jpeg" alt="Project 1">
+  </div>
+  <div class="gallery-item">
+    <img src="library_dashboard.jpeg" alt="Project 2">
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>©️ <span id="year"></span> Portfolio</p>
+</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Online Portfolio — Home</title>
+
+<style>
+:root{
+  --bg-grad: linear-gradient(135deg,#7c4dff 0%, #ff6fb5 100%);
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --text: #f7f7fb;
+  --muted: rgba(247,247,251,0.78);
+  --accent: #ffd3ef;
+  --radius: 14px;
+  --container: 1100px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins',system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  color:var(--text);
+  background: var(--bg-grad);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{max-width:var(--container);margin:0 auto;padding:2rem}
+
+/* header */
+.site-header{
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), transparent);
+  backdrop-filter: blur(6px);
+  position:sticky;top:0;z-index:10;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.5rem 0;flex-wrap:wrap}
+.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap}
+.btn-link{color:var(--text);text-decoration:none;padding:0.55rem 0.9rem;border-radius:10px;font-weight:600;opacity:0.95}
+.btn-link:hover{transform:translateY(-2px);transition:all .18s}
+.btn-link.active{background:rgba(255,255,255,0.06)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center;min-height:66vh;padding-top:2.8rem}
+.hero-title{font-size:2rem;margin:0 0 .6rem;letter-spacing:0.2px}
+.hero-sub{color:var(--muted);margin:0 0 1.2rem}
+.hero-ctas{display:flex;gap:0.8rem;flex-wrap:wrap}
+.btn{display:inline-block;background:rgba(255,255,255,0.12);color:var(--text);padding:0.7rem 1.1rem;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.18);transition:all .18s ease}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.26)}
+.btn-secondary{background:transparent;border:1px solid rgba(255,255,255,0.18)}
+.small{padding:0.45rem 0.7rem;border-radius:8px;font-size:0.9rem}
+.outline{background:transparent;border:1px solid rgba(255,255,255,0.14)}
+
+/* avatar */
+.avatar{width:320px;height:320px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.05);background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center}
+.avatar img{width:100%;height:100%;object-fit:cover}
+
+/* quick skills */
+.quick-skills{margin-top:1.2rem}
+.skills-list{display:flex;gap:0.6rem;flex-wrap:wrap}
+.skill-chip{background:rgba(255,255,255,0.06);padding:0.45rem 0.7rem;border-radius:999px;font-weight:600;color:var(--text)}
+
+/* footer */
+.site-footer{padding:1.2rem 0;color:var(--muted)}
+.footer-inner{display:flex;justify-content:center}
+
+/* fade slide */
+.fade-slide{opacity:0;transform:translateY(12px);animation:fadeSlide .6s forwards}
+.delay-1{animation-delay:.18s}
+@keyframes fadeSlide{to{opacity:1;transform:none}}
+</style>
+
+</head>
+<body>
+
+<header class="site-header">
+<nav class="nav container">
+<a class="logo" href="index.html">Portfolio</a>
+<div class="nav-links">
+  <a href="index.html" class="btn-link active">Home</a>
+  <a href="projects.html" class="btn-link">Projects</a>
+  <a href="gallery.html" class="btn-link">Gallery</a>
+  <a href="about.html" class="btn-link">About</a>
+  <a href="blog.html" class="btn-link">Blog</a>
+  <a href="blog-details.html" class="btn-link">Blog Details</a>
+  <a href="pricing.html" class="btn-link">Pricing</a>
+  <a href="faq.html" class="btn-link">FAQ</a>
+  <a href="contact.html" class="btn-link">Contact</a>
+  <a href="skills.html" class="btn-link">Skills</a>
+  <a href="services.html" class="btn-link">Services</a>
+  <a href="service-details.html" class="btn-link">Service Details</a>
+</div>
+</nav>
+</header>
+
+<main class="hero container">
+<div class="hero-content fade-slide">
+<h1 class="hero-title">Hi — I'm a Web Developer & UI Designer</h1>
+<p class="hero-sub">I build clean, user-friendly digital experiences.</p>
+
+<div class="hero-ctas">
+<a href="projects.html" class="btn">View Projects</a>
+<a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+</div>
+
+<section class="quick-skills">
+<h4>Key Skills</h4>
+<div class="skills-list">
+<span class="skill-chip">HTML</span>
+<span class="skill-chip">CSS</span>
+<span class="skill-chip">JavaScript</span>
+<span class="skill-chip">React</span>
+<span class="skill-chip">Python (ML)</span>
+</div>
+</section>
+</div>
+
+<div class="hero-visual fade-slide delay-1">
+<div class="avatar">
+<img src="avatar.jpeg" alt="Profile avatar">
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>©️ <span id="year"></span> Portfolio — All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

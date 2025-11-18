@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Portfolio</title>
+
+<style>
+:root{
+  --bg-grad: linear-gradient(135deg,#7c4dff 0%, #ff6fb5 100%);
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --text: #f7f7fb;
+  --muted: rgba(247,247,251,0.78);
+  --accent: #ffd3ef;
+  --radius: 14px;
+  --container: 1100px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins',system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  color:var(--text);
+  background: var(--bg-grad);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{max-width:var(--container);margin:0 auto;padding:2rem}
+
+/* header */
+.site-header{
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), transparent);
+  backdrop-filter: blur(6px);
+  position:sticky;top:0;z-index:10;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.5rem 0}
+.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;gap:0.6rem;align-items:center}
+.btn-link{color:var(--text);text-decoration:none;padding:0.55rem 0.9rem;border-radius:10px;font-weight:600;opacity:0.95}
+.btn-link:hover{transform:translateY(-2px);transition:all .18s}
+.btn-link.active{background:rgba(255,255,255,0.06)}
+
+/* contact page layout */
+.page-content{
+  min-height:65vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding-top:3rem;
+}
+
+/* contact card */
+.contact-card{
+  width:100%;
+  max-width:600px;
+  background: var(--glass);
+  padding:2rem;
+  border-radius:var(--radius);
+  box-shadow:0 18px 40px rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  animation:fadeSlide .6s forwards;
+}
+
+/* titles */
+.page-title{
+  margin:0 0 1rem;
+  font-size:1.8rem;
+  font-weight:700;
+}
+.muted{color:var(--muted);margin-bottom:2rem}
+
+/* form */
+label{display:block;margin-bottom:1.1rem;font-weight:600}
+input,textarea{
+  width:100%;
+  padding:0.8rem 1rem;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.08);
+  color:var(--text);
+  font-family:inherit;
+  resize:none;
+}
+textarea{height:130px}
+
+input::placeholder,
+textarea::placeholder{
+  color:rgba(255,255,255,0.55);
+}
+
+.form-actions{
+  margin-top:1.2rem;
+  display:flex;
+  gap:0.8rem;
+}
+
+/* buttons */
+.btn{
+  display:inline-block;
+  background:rgba(255,255,255,0.12);
+  color:var(--text);
+  padding:0.7rem 1.1rem;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 6px 18px rgba(0,0,0,0.18);
+  transition:all .18s ease;
+  cursor:pointer;
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.26)}
+.btn.outline{background:transparent;border:1px solid rgba(255,255,255,0.18)}
+
+/* footer */
+.site-footer{padding:1.2rem 0;color:var(--muted);text-align:center;}
+
+/* fade animation */
+.fade-slide{opacity:0;transform:translateY(12px);animation:fadeSlide .6s forwards}
+@keyframes fadeSlide{to{opacity:1;transform:none}}
+
+</style>
+
+</head>
+<body>
+
+<header class="site-header">
+<nav class="nav container">
+<a class="logo" href="index.html">Portfolio</a>
+<div class="nav-links">
+  <a href="index.html" class="btn-link">Home</a>
+  <a href="projects.html" class="btn-link">Projects</a>
+  <a href="gallery.html" class="btn-link">Gallery</a>
+  <a href="about.html" class="btn-link">About</a>
+  <a href="blog.html" class="btn-link">Blog</a>
+   <a href="blog-details.html" class="btn-link">Blog Details</a>
+  <a href="pricing.html" class="btn-link">Pricing</a>
+  <a href="faq.html" class="btn-link">FAQ</a>
+  <a href="contact.html" class="btn-link active ">Contact</a>
+  <a href="skills.html" class="btn-link">Skills</a>
+  <a href="services.html" class="btn-link">Services</a>
+  <a href="service-details.html" class="btn-link">Service Details</a>
+</div>
+</nav>
+</header>
+
+<main class="container page-content fade-slide">
+  <div class="contact-card">
+
+    <h2 class="page-title">Contact</h2>
+    <p class="muted">Have a question or want to collaborate? Send a message:</p>
+
+    <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+
+      <label>Name
+        <input type="text" name="name" required placeholder="Your name">
+      </label>
+
+      <label>Email
+        <input type="email" name="email" required placeholder="your@mail.com">
+      </label>
+
+      <label>Message
+        <textarea name="message" required placeholder="Write your message..."></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Send Message</button>
+        <button type="reset" class="btn outline">Reset</button>
+      </div>
+    </form>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+<p>© <span id="year"></span> Portfolio — All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
